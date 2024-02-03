@@ -3,7 +3,6 @@ import {
   Button,
   Image,
   SafeAreaView,
-  Text,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -22,6 +21,7 @@ const List = ({ navigation }: { navigation: any }) => {
         }}
       >
         <MarketingSlider />
+        <Button title="Go to Travel List" onPress={() => navigation.push("TravelList")} />
         <View
           style={{
             flexDirection: "row",
