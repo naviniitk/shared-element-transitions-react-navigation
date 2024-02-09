@@ -60,15 +60,15 @@ const TravelList = ({ navigation }: { navigation: any }) => {
                 navigation.push("TravelListDetail", { item });
               }}
             >
-              <SharedElement
-                id={`item.${item.key}.photo`}
-                style={[StyleSheet.absoluteFillObject]}
+              <View
+                style={[
+                  StyleSheet.absoluteFillObject,
+                  { overflow: "hidden", borderRadius: themeValues.RADIUS },
+                ]}
               >
-                <View
-                  style={[
-                    StyleSheet.absoluteFillObject,
-                    { overflow: "hidden", borderRadius: themeValues.RADIUS },
-                  ]}
+                <SharedElement
+                  id={`item.${item.key}.photo`}
+                  style={[StyleSheet.absoluteFillObject]}
                 >
                   <Animated.Image
                     source={{ uri: item.image, cache: "force-cache" }}
@@ -77,8 +77,8 @@ const TravelList = ({ navigation }: { navigation: any }) => {
                       { resizeMode: "cover", transform: [{ scale }] },
                     ]}
                   />
-                </View>
-              </SharedElement>
+                </SharedElement>
+              </View>
 
               <SharedElement id={`item.${item.key}.location`}>
                 <Animated.Text
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
     position: "absolute",
     top: themeValues.SPACING * 2,
-    left: themeValues.SPACING * 2 ,
+    left: themeValues.SPACING * 2,
   },
   daysContainer: {
     position: "absolute",

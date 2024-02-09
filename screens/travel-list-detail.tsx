@@ -53,18 +53,18 @@ const TravelListDetail = ({
         </Text>
       </TouchableOpacity>
 
-      <SharedElement
-        id={`item.${item.key}.photo`}
-        style={[StyleSheet.absoluteFillObject]}
-      >
-        <View style={[StyleSheet.absoluteFillObject]}>
+      <View style={[StyleSheet.absoluteFillObject]}>
+        <SharedElement
+          id={`item.${item.key}.photo`}
+          style={[StyleSheet.absoluteFillObject]}
+        >
           <Image
             source={{ uri: item.image, cache: "force-cache" }}
             style={[StyleSheet.absoluteFillObject]}
             resizeMode="cover"
           />
-        </View>
-      </SharedElement>
+        </SharedElement>
+      </View>
 
       <SharedElement id={`item.${item.key}.location`}>
         <Text style={[styles.location]}>{item.location}</Text>
